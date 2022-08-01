@@ -10,7 +10,7 @@
     <h1>All Categories of instruments</h1>
     <ul>
         <% for (let category of categories) {%>
-            <li><%= category.name %> </li>
+            <li><a href="/categories/<%= category._id %>"><%= category.name %></a></li>
         <% }%>
     </ul>
 </body>
