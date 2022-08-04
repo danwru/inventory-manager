@@ -9,20 +9,18 @@
 <body>
     <h1><%= category.name %> </h1>
     <h2><%= category.description %> </h2>
-    <div>
-        <a href="/categories/new">Add category</a>
-    </div>
     <% for (item of items) { %>
         <ul>
             <% if (item.category === category.name) {%>
-                <li><a href=""><%= item.name %> </a></li>
-            <% } %> 
+                <li><a href="/items/<%= item._id %>"><%= item.name %> </a></li>
+            <% } %>
         </ul>
     <% } %>
-    <p><a href="/categories/<%= category._id%>/edit">Edit</a></p>
+    <p><a href="/items/new">Add new item</a></p> 
+    <p><a href="/categories/<%= category._id%>/edit">Edit Category</a></p>
     <p>
         <form action="/categories/<%=category._id%>?_method=DELETE" method="POST">
-            <button>Delete</button>
+            <button>Delete Category</button>
         </form>
     </p>
     <footer>

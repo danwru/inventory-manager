@@ -31,6 +31,10 @@ app.use(methodOverride("_method"));
 const categoryRouter = require("./routes/categoryRoutes");
 app.use("/", categoryRouter);
 
+// Item Route
+const itemRouter = require("./routes/itemRoutes");
+app.use("/", itemRouter);
+
 app.listen(3000, () => {
   console.log("Serving on port 3000");
 });
