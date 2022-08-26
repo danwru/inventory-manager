@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
-</head>
-<body>
-    <h1><%= category.name %> </h1>
-    <h2><%= category.description %> </h2>
-    <% for (item of items) { %>
-        <ul>
-            <% if (item.category === category.name) {%>
-                <li><a href="/items/<%= item._id %>"><%= item.name %> </a></li>
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h1 class="card-title"><%= category.name %> </h1>
+                <h2 class="card-text"><%= category.description %> </h2>
+            </div>
+            
+            <% for (item of items) { %>
+                <ul>
+                    <% if (item.category === category.name) {%>
+                        <li><a href="/items/<%= item._id %>"><%= item.name %> </a></li>
+                    <% } %>
+                </ul>
             <% } %>
-        </ul>
-    <% } %>
-    <p><a href="/items/new">Add new item</a></p> 
-    <p><a href="/categories/<%= category._id%>/edit">Edit Category</a></p>
-    <p>
-        <form action="/categories/<%=category._id%>?_method=DELETE" method="POST">
-            <button>Delete Category</button>
-        </form>
-    </p>
-    <footer>
-        <a href="/categories">All categories</a>
-    </footer> 
-</body>
-</html>
+            <p><a href="/items/new">Add new item</a></p> 
+            <p><a href="/categories/<%= category._id%>/edit">Edit Category</a></p>
+            <p>
+                <form action="/categories/<%=category._id%>?_method=DELETE" method="POST">
+                    <button>Delete Category</button>
+                </form>
+            </p>
+        </div>
+    </div>
+</div>
+

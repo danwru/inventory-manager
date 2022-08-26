@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit item</title>
-</head>
-<body>
-    <h1>Edit item</h1>
-    <form action="/items/<%= item._id %>?_method=PUT" method="POST">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="item[name]" value="<%= item.name %> ">
-        </div>
-        <div>
-            <label for="stock">Stock</label>
-            <input type="text" id="stock" name="item[stock]" value="<%= item.stock %> ">
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="text" id="price" name="item[price]" value="<%= item.price %> ">
-        </div>
-        <button>Update Item</button>
-    </form>
-</body>
-</html>
+<% layout('layouts/boilerplate') %>
+<h1>Edit item</h1>
+<form action="/items/<%= item._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="item[name]" value="<%= item.name %> ">
+    </div>
+    <div>
+        <label for="stock">Stock</label>
+        <input type="text" id="stock" name="item[stock]" value="<%= item.stock %> ">
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="text" id="price" name="item[price]" value="<%= item.price %> ">
+    </div>
+    <button>Update Item</button>
+</form>

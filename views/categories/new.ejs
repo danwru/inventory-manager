@@ -1,23 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Category</title>
-</head>
-<body>
-    <form action="/categories" method="POST">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="category[name]">
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <input type="text" id="description" name="category[description]">
-        </div>
-        <button>Add Category</button>
-    </form>
-    <a href="/categories">All categories</a>
-</body>
-</html>
+<% layout('layouts/boilerplate') %> 
+
+<!--
+<div class="row">
+    <h1 class="text-center">New Category</h1>
+    <div class="col-6 offset-4">
+        <form action="/categories" method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="category[name]">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" id="description" name="category[description]">
+            </div>
+            <button>Add Category</button>
+        </form>
+        <a href="/categories">All categories</a>
+    </div>
+</div>
+
+-->
+
+
+<div class="row">
+    <h1 class="text-center">New Category</h1>
+    <div class="col-6 offset-3">
+        <form action="/categories" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="title" name="category[name]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="category[description]"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Category</button>
+            </div>
+        </form>
+        <a href="/categories">All Categories</a>
+    </div>
+</div>
