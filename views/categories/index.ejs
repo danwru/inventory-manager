@@ -1,10 +1,16 @@
 <% layout('layouts/boilerplate') %>
 <h1>All Categories of instruments</h1>
-<ul>
+<div class="d-flex flex-row align-self-stretch flex-wrap">
     <% for (let category of categories) {%>
-        <li><a href="/categories/<%= category._id %>"><%= category.name %></a></li>
+        <div class="card w-50">
+            <div class="card-body">
+                <h5 class="card-title"><%= category.name %></h5>
+                <p><%= category.description %> </p>
+                <a href="/categories/<%= category._id %>" class="btn btn-primary">View Stock</a>
+            </div>
+        </div>
     <% }%>
-</ul>
-<div>
-    <a href="/categories/new">Add category</a>
+</div>
+<div class="text-center">
+    <a class="btn btn-success my-5" href="/categories/new">Add category</a>
 </div>

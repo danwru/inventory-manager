@@ -1,4 +1,5 @@
 const Item = require("../models/item");
+const Category = require("../models/category");
 
 exports.index = (req, res) => {
   res.render("/items/home");

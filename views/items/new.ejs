@@ -1,22 +1,22 @@
 <% layout('layouts/boilerplate') %> 
 
-<h1>Create a new item</h1>
+<h1 class="mb-5">Create a new item</h1>
 <form action="/items" method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="item[name]">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+        <input type="text" id="name" name="item[name]" class="form-control">
     </div>
-    <div>
-        <label for="category">Category</label>
-        <input type="text" id="category" name="item[category]">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Cateogory</span>
+        <input type="text" id="category" name="item[category]" class="form-control">
     </div>
-    <div>
-        <label for="stock">Stock</label>
-        <input type="text" id="stock" name="item[stock]">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Stock</span>
+        <input type="text" id="stock" name="item[stock]" class="form-control">
     </div>
-    <div>
-        <label for="price">Price</label>
-        <input type="text" id="price" name="item[price]">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+        <input type="text" id="price" name="item[price]" class="form-control">
     </div>
-    <button>Add Item</button>
+    <button class="btn btn-primary">Add Item</button>
 </form>

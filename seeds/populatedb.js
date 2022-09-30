@@ -32,7 +32,7 @@ const seedDB = async () => {
 
   // seed items
   await Item.deleteMany({});
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 50; i++) {
     const curr = sample(instruments);
     const item = new Item({
       name: `${sample(brands)} ${curr}`,

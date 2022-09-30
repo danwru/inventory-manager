@@ -5,23 +5,43 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h1 class="card-title"><%= category.name %> </h1>
-                <h2 class="card-text"><%= category.description %> </h2>
             </div>
-            
-            <% for (item of items) { %>
-                <ul>
-                    <% if (item.category === category.name) {%>
-                        <li><a href="/items/<%= item._id %>"><%= item.name %> </a></li>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Price ($)</th>
+                    <th scope="col">Id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% let i = 1; %> 
+                    <% for (item of items) { %>
+                        <% if (item.category === category.name) {%>
+                            <tr>
+                                <th scope="row"><a href="/items/<%= item._id %>"><%= item.name %> </a></th>
+                                <td><%= item.stock %></td>
+                                <td><%= item.price %></td>
+                                <td class="text-muted"><%= item._id %></td>
+                            </tr>
+                            <% i++; %> 
+                        <% } %>
                     <% } %>
-                </ul>
-            <% } %>
-            <p><a href="/items/new">Add new item</a></p> 
-            <p><a href="/categories/<%= category._id%>/edit">Edit Category</a></p>
-            <p>
+                    <tr>
+                        <th scope="row"><a class="text-success" href="/items/new">Add new item</a></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+              </table>
+            <div>
+                <button class="btn btn-dark my-3"><a class="text-white text-decoration-none" href="/categories/<%= category._id%>/edit">Edit Category</a></button>
                 <form action="/categories/<%=category._id%>?_method=DELETE" method="POST">
-                    <button>Delete Category</button>
+                    <button class="btn btn-danger">Delete Category</button>
                 </form>
-            </p>
+            </div>
         </div>
     </div>
 </div>

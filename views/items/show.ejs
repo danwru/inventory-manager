@@ -1,11 +1,18 @@
 <% layout('layouts/boilerplate') %>
-<h1>Page for <%= item.name %></h1>
-<p>Current price: $<%= item.price %> </p>
-<p>Number in stock: <%= item.stock %> </p>
-<p>Under the category of <%= item.category %> </p>
-<p><a href="/items/<%= item._id%>/edit">Edit</a></p>
+
+<h1>Details for item "<%= item.name %>"</h1>
+
+<div class="card my-3" style="width: 50rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><p>Current price: $<%= item.price %> </p></li>
+      <li class="list-group-item"><p>Number in stock: <%= item.stock %> </p></li>
+      <li class="list-group-item"><p>Under the category of <%= item.category %> </p></li>
+    </ul>
+</div>
+
+<button class="btn btn-dark"><a class="text-white text-decoration-none" href="/items/<%= item._id%>/edit">Edit</a></button>
 <p>
     <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
-        <button>Delete</button>
+        <button class="btn btn-danger">Delete</button>
     </form>
 </p>
